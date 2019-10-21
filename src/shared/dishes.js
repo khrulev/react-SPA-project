@@ -16,6 +16,7 @@ export const DISHES =
             author: "John Lemon",
             date: "2012-10-16T17:57:28.556094Z"
             },
+            
             {
             id: 1,
             rating: 4,
