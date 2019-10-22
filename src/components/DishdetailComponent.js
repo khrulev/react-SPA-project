@@ -8,9 +8,7 @@ class DishDetail extends Component {
     }
 
     renderDish(dish) {
-       
         if (dish != null) {
-            
             return (
                 <Card>
                     <CardImg width="100%" src={dish.image} alt={dish.name}></CardImg>
@@ -20,55 +18,42 @@ class DishDetail extends Component {
                     </CardBody >
                 </Card>
             );
-
         } else {
-
             return (<div></div>);
-
         };
     }
 
-    renderComments(Comments) {
-
-        if (Comments != null) {
-            
-            const DetailComments = Comments.map(
-                (Comment) => {
-
-                    // const options = {day: 'numeric', month: 'short', year: 'numeric'};
-                    // const date = new Date(Comment.date).toLocaleDateString('en-Us', options);
-    
+    renderComments(comments) {
+        if (comments != null) {
+            const detailComments = comments.map(
+                (comment) => {
+                    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+                    const date = new Date(comment.date).toLocaleDateString('en-Us', options);
                     return (
-
                         <ul class="list-unstyled">
-                            <li>{Comment.comment}</li>
+                            <li>{comment.comment}</li>
                             <li><br></br></li>
-                            <li> -- {Comment.author}, {Comment.date}</li>
+                            <li> -- {comment.author}, {date}</li>
                         </ul>
                     );
                 });
-
             return (
                 <div>
                     <h4>Comments</h4>
-                    {DetailComments}
+                    {detailComments}
                 </div>
             )
 
         } else {
-            
             return (<div></div>);
-
         };
     }
 
     render() {
-
         if (this.props.selectedDish != null) {
-
             return (
                 <div className="row">
-                    <div key={this.props.selectedDish.id} className="col-12 col-md-5 m-1">
+                    <div className="col-12 col-md-5 m-1">
                         {this.renderDish(this.props.selectedDish)}
                     </div>
                     <div className="col-12 col-md-5 m-1">
@@ -79,7 +64,6 @@ class DishDetail extends Component {
         } else {
             return (<div></div>);
         };
-
     }
 };
 
