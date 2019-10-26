@@ -44,7 +44,7 @@ toggleNav() {
 
                                 <NavItem>
                                     <NavLink className="nav-link" to="/contactus">
-                                        <span className="fa fa-adress-card fa-lg">Contacts</span>
+                                        <span className="fa fa-address-card fa-lg">Contacts</span>
                                     </NavLink>
                                 </NavItem>
                             </Nav>
