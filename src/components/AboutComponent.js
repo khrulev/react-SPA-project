@@ -11,9 +11,7 @@ function RenderLeader({ leader }) {
                 </Media>
                 <Media body className="ml-5">
                     <Media heading> {leader.name} </Media>
-                    {leader.designation}
-                    <br />
-                    <br />
+                    <p>{leader.designation}</p>
                     <p>{leader.description}</p>
                 </Media>
             </Media>
@@ -78,7 +76,9 @@ function About(props) {
                     <h2>Corporate Leadership</h2>
                 </div>
                 <div className="col-12">
-                    {props.leaders.map((leader) => { return (<RenderLeader leader={leader} />); })}
+                    <Media list>
+                        {props.leaders.map((leader) => { return (<RenderLeader leader={leader} />); })}
+                    </Media>
                 </div>
             </div>
         </div>
