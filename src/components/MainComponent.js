@@ -34,10 +34,6 @@ const mapDispatchToProps = dispatch => ({
 
 class Main extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchDishes();
     this.props.fetchComments();
@@ -58,7 +54,6 @@ class Main extends Component {
           leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
           leaderLoading={this.props.leaders.isLoading}
           leaderErrMess={this.props.leaders.errMess}
-
         />
       )
     }
